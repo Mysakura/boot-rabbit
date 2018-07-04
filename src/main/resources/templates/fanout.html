@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>[[${title}]]</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/index.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/rabbit.css}">
+</head>
+<body>
+    <div class="header header-fix">
+        <h1>SpringBoot & RabbitMQ</h1>
+    </div>
+    <div class="container container-fix">
+        <div th:replace="~{commons :: common-nav}"></div>
+        <div class="msg-wrap">
+            <div class="msg-content" contenteditable="true" data-tip="消息内容"></div>
+            <a href="javascript:;" class="send-msg" data-role="fanout">Send</a>
+        </div>
+    </div>
+    <div th:replace="~{commons :: common-js}"></div>
+</body>
+</html>

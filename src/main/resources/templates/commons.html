@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+    <div th:fragment="common-nav">
+        <a href="/directPage" class="exchange">DirectExchange</a>
+        <a href="/fanoutPage" class="exchange">FanoutExchange</a>
+        <a href="/topicPage" class="exchange">TopicExchange</a>
+    </div>
+
+    <div th:fragment="common-js">
+        <script th:src="@{/js/ref/jquery-3.3.1.min.js}"></script>
+        <script th:src="@{/js/rabbit.js}"></script>
+    </div>
+</body>
+</html>

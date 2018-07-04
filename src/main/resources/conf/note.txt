@@ -1,0 +1,28 @@
+Send Message:
+    void send(Message message) throws AmqpException;
+    void send(String routingKey, Message message) throws AmqpException;
+    void send(String exchange, String routingKey, Message message) throws AmqpException;
+Receiving messages:
+    Message receive() throws AmqpException;
+    Message receive(String queueName) throws AmqpException;
+    Message receive(long timeoutMillis) throws AmqpException;
+    Message receive(String queueName, long timeoutMillis) throws AmqpException;
+
+    Object receiveAndConvert() throws AmqpException;
+    Object receiveAndConvert(String queueName) throws AmqpException;
+    Message receiveAndConvert(long timeoutMillis) throws AmqpException;
+    Message receiveAndConvert(String queueName, long timeoutMillis) throws AmqpException;
+
+    <R, S> boolean receiveAndReply(ReceiveAndReplyCallback<R, S> callback)
+    	   throws AmqpException;
+    <R, S> boolean receiveAndReply(String queueName, ReceiveAndReplyCallback<R, S> callback)
+     	throws AmqpException;
+    <R, S> boolean receiveAndReply(ReceiveAndReplyCallback<R, S> callback,
+    	String replyExchange, String replyRoutingKey) throws AmqpException;
+    <R, S> boolean receiveAndReply(String queueName, ReceiveAndReplyCallback<R, S> callback,
+    	String replyExchange, String replyRoutingKey) throws AmqpException;
+    <R, S> boolean receiveAndReply(ReceiveAndReplyCallback<R, S> callback,
+     	ReplyToAddressCallback<S> replyToAddressCallback) throws AmqpException;
+    <R, S> boolean receiveAndReply(String queueName, ReceiveAndReplyCallback<R, S> callback,
+    			ReplyToAddressCallback<S> replyToAddressCallback) throws AmqpException;
+
